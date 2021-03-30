@@ -29,6 +29,8 @@
 <script src="/js/list.js"></script>
 <script src="/js/view.js"></script>
 <script src="/js/modi.js"></script>
+<script src="/js/header.js"></script>
+<script src="/js/join.js"></script>
 </body>
 </html>
 
