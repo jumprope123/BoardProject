@@ -8,6 +8,7 @@
 <div id="main">
     <div class="margin1050">
         <form id="ModiMemberForm">
+            <input type="hidden" name="data" value="${data}">
             <div class="row mt-3">
                 <div class="col-8 offset-2 mt-2">
                     <label for="userIDForModi">아이디</label>
@@ -15,7 +16,7 @@
                 </div>
                 <div class="col-8 offset-2 mt-2">
                     <label for="NickNameForModi">닉네임</label>
-                    <input type="text" class="form-control" id="NickNameForModi" name="nickname" value="${data.nickname}">
+                    <input type="text" class="form-control" id="NickNameForModi" name="nickname" value="${data.nickname}" readonly>
                 </div>
             </div>
             <div class="row text-center">

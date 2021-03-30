@@ -43,8 +43,31 @@
         </div>
         <div class="row mt-5">
             <div class="col-12  text-center">
-                <td><button class="btn btn-warning" onclick="javascript:modiFromView(${data.boardno})">수정</button></td>
-                <td><button class="btn btn-danger" onclick="javascript:delFromView(${data.boardno})">삭제</button></td>
+
+                <c:if test="${empty d.userid}">
+                    <td><button class="btn btn-warning" onclick="javascript:modiFromView(${data.boardno})">수정</button></td>
+                </c:if>
+                <c:if test="${not empty d.userid}">
+                    <c:if test="${d.userid ne UID.userid}">
+                        <td><button class="btn btn-warning" onclick="javascript:modiFromView(${data.boardno})">수정</button></td>
+                    </c:if>
+                    <c:if test="${d.userid eq UID.userid}">
+                        <td><button class="btn btn-warning" onclick="javascript:modiMemberFromView(${data.boardno})">수정</button></td>
+                    </c:if>
+                </c:if>
+
+                <c:if test="${empty d.userid}">
+                    <td><button class="btn btn-danger" onclick="javascript:delFromView(${data.boardno})">삭제</button></td>
+                </c:if>
+                <c:if test="${not empty d.userid}">
+                    <c:if test="${d.userid ne UID.userid}">
+                        <td><button class="btn btn-danger" onclick="javascript:delFromView(${data.boardno})">삭제</button></td>
+                    </c:if>
+                    <c:if test="${d.userid eq UID.userid}">
+                        <td><button class="btn btn-danger" onclick="javascript:delMemberFromView(${data.boardno})">삭제</button></td>
+                    </c:if>
+                </c:if>
+
             </div>
         </div>
     </div>

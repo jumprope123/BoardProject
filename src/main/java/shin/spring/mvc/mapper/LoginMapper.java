@@ -10,4 +10,10 @@ public interface LoginMapper {
     int checkId(String userid);
 
     LoginVO readOneMember(LoginVO lvo);
+
+    String checkEncodedPassword(String userid);
+
+    int changeNick(LoginVO lvo);
+
+    int changePassword(LoginVO lvo);
 }

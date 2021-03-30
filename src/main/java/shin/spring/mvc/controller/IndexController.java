@@ -7,9 +7,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import shin.spring.mvc.service.WriteService;
+import shin.spring.mvc.vo.LoginVO;
 import shin.spring.mvc.vo.WriteVO;
 
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @Controller
@@ -24,8 +26,11 @@ public class IndexController {
     }
 
     @GetMapping("/write")
-    public String write(){
-        return "write.tiles";
+    public ModelAndView write(ModelAndView mv, HttpSession session){
+        mv.setViewName("/write.tiles");
+        LoginVO lvo = (LoginVO) session.getAttribute("UID");
+        mv.addObject("UID",lvo);
+        return mv;
     }
 
     @PostMapping("/writeOk")
@@ -35,32 +40,42 @@ public class IndexController {
     }
 
     @GetMapping("/list")
-    public ModelAndView list (ModelAndView mv, String cp){
+    public ModelAndView list (ModelAndView mv, String cp ,HttpSession session){
+        LoginVO lvo = (LoginVO) session.getAttribute("UID");
+
         if (cp == null || cp.isEmpty()) { cp = "1"; }
 
         mv.setViewName("/list.tiles");
         mv.addObject("data",wsrv.readAllData(cp));
         mv.addObject("dataCnt", wsrv.readAllDataCnt());
+        mv.addObject("UID",lvo);
 
         return mv;
     }
 
     @GetMapping("/find")
-    public ModelAndView find (ModelAndView mv, String findtype, String findkey, String cp){
+    public ModelAndView find (ModelAndView mv, String findtype, String findkey, String cp, HttpSession session){
+        LoginVO lvo = (LoginVO) session.getAttribute("UID");
+
         if (cp == null || cp.isEmpty()) { cp = "1"; }
 
         mv.setViewName("/list.tiles");
         mv.addObject("data",wsrv.readFindData(findtype,findkey,cp));
         mv.addObject("dataCnt",wsrv.readFindCnt(findtype,findkey));
+        mv.addObject("UID",lvo);
 
         return mv;
     }
 
     @GetMapping("/view")
-    public ModelAndView view(ModelAndView mv ,String boardno){
+    public ModelAndView view(ModelAndView mv ,String boardno, HttpSession session){
+        LoginVO lvo = (LoginVO) session.getAttribute("UID");
+
         mv.setViewName("/view.tiles");
         mv.addObject("data", wsrv.readOneData(boardno));
         wsrv.addViewCtn(boardno); //뷰카운트
+        mv.addObject("UID",lvo);
+
         return mv;
     }
 

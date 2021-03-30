@@ -68,8 +68,29 @@
                                 <c:if test="${empty d.modidate}">비어있음</c:if>
                                 <c:if test="${not empty d.modidate}">${fn:substring(d.modidate,0,19)}</c:if>
                             </td>
-                            <td><button class="btn btn-warning" onclick="javascript:modiFromList(${d.boardno})">수정</button></td>
-                            <td><button class="btn btn-danger" onclick="javascript:delFromList(${d.boardno})">삭제</button></td>
+                            <c:if test="${empty d.userid}">
+                                <td><button class="btn btn-warning" onclick="javascript:modiFromList(${d.boardno})">수정</button></td>
+                            </c:if>
+                            <c:if test="${not empty d.userid}">
+                                <c:if test="${d.userid ne UID.userid}">
+                                    <td><button class="btn btn-warning" onclick="javascript:modiFromList(${d.boardno})">수정</button></td>
+                                </c:if>
+                                <c:if test="${d.userid eq UID.userid}">
+                                    <td><button class="btn btn-warning" onclick="javascript:modiMemberFromList(${d.boardno})">수정</button></td>
+                                </c:if>
+                            </c:if>
+
+                            <c:if test="${empty d.userid}">
+                                <td><button class="btn btn-danger" onclick="javascript:delFromList(${d.boardno})">삭제</button></td>
+                            </c:if>
+                            <c:if test="${not empty d.userid}">
+                                <c:if test="${d.userid ne UID.userid}">
+                                    <td><button class="btn btn-danger" onclick="javascript:delFromList(${d.boardno})">삭제</button></td>
+                                </c:if>
+                                <c:if test="${d.userid eq UID.userid}">
+                                    <td><button class="btn btn-danger" onclick="javascript:delModiFromList(${d.boardno})">삭제</button></td>
+                                </c:if>
+                            </c:if>
                         </tr>
                     </c:forEach>
                     </tbody>

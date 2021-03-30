@@ -32,6 +32,9 @@
 <script src="/js/header.js"></script>
 <script src="/js/join.js"></script>
 <script src="/js/login.js"></script>
+<script src="/js/memberInfo.js"></script>
+<script src="/js/changeNick.js"></script>
+<script src="/js/changePassword.js"></script>
 </body>
 </html>
 

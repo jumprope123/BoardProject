@@ -24,4 +24,15 @@
         select * from login where userid = #{userid};
     </select>
 
+    <select id="checkEncodedPassword" statementType="PREPARED" parameterType="String" resultType="String">
+        select password from login where userid = #{userid};
+    </select>
+
+    <update id="changeNick" statementType="PREPARED" parameterType="shin.spring.mvc.vo.LoginVO">
+        update login set nickname = #{nickname} where userid = #{userid};
+    </update>
+
+    <update id="changePassword" statementType="PREPARED" parameterType="shin.spring.mvc.vo.LoginVO">
+        update login set password = #{password}, passwordcheck = #{passwordcheck} where userid = #{userid};
+    </update>
 </mapper>

@@ -10,4 +10,10 @@ public interface LoginService {
     LoginVO login(LoginVO lvo);
 
     LoginVO readOneMember(LoginVO lvo);
+
+    String checkEncodedPassword(String userid);
+
+    int changeNick(LoginVO lvo);
+
+    int updatePassword(LoginVO lvo);
 }

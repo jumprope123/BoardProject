@@ -12,39 +12,39 @@
        http://www.springframework.org/schema/context
        https://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-    <!--jdbc properties-->
-    <util:properties id="jdbc"
-                     location="/WEB-INF/jdbc.properties"/>
+<!--    &lt;!&ndash;jdbc properties&ndash;&gt;-->
+<!--    <util:properties id="jdbc"-->
+<!--                     location="/WEB-INF/jdbc.properties"/>-->
 
-    <!-- jdbc property : 현재 파일에만 속성값 적용 -->
-    <context:property-placeholder
-            location="/WEB-INF/jdbc.properties" />
+<!--    &lt;!&ndash; jdbc property : 현재 파일에만 속성값 적용 &ndash;&gt;-->
+<!--    <context:property-placeholder-->
+<!--            location="/WEB-INF/jdbc.properties" />-->
 
-    <!--dbcp datasource-->
-    <bean id="dbcpDataSource"
-          class="org.apache.commons.dbcp2.BasicDataSource"
-          p:driverClassName="${DRV}"
-          p:url="${URL}"
-          p:username="${USR}"
-          p:password="1234" />
+<!--    &lt;!&ndash;dbcp datasource&ndash;&gt;-->
+<!--    <bean id="dbcpDataSource"-->
+<!--          class="org.apache.commons.dbcp2.BasicDataSource"-->
+<!--          p:driverClassName="${DRV}"-->
+<!--          p:url="${URL}"-->
+<!--          p:username="${USR}"-->
+<!--          p:password="0970" />-->
 
-    <!--mybaits 설정 #1-->
-    <bean id="sqlSessionFactory"
-          class="org.mybatis.spring.SqlSessionFactoryBean"
-          p:dataSource-ref="dbcpDataSource"
-          p:mapperLocations="classpath*:/sql/*.xml"/>
-<!--    *.xml로 끝나는 모든 xml을 읽어라-->
+<!--    &lt;!&ndash;mybaits 설정 #1&ndash;&gt;-->
+<!--    <bean id="sqlSessionFactory"-->
+<!--          class="org.mybatis.spring.SqlSessionFactoryBean"-->
+<!--          p:dataSource-ref="dbcpDataSource"-->
+<!--          p:mapperLocations="classpath*:/sql/*.xml"/>-->
+<!--&lt;!&ndash;    *.xml로 끝나는 모든 xml을 읽어라&ndash;&gt;-->
 
-    <!-- myBatis3 설정 #2 -->
-    <bean id="sqlSession"
-          class="org.mybatis.spring.SqlSessionTemplate">
-        <constructor-arg ref="sqlSessionFactory" index="0" />
-    </bean>
+<!--    &lt;!&ndash; myBatis3 설정 #2 &ndash;&gt;-->
+<!--    <bean id="sqlSession"-->
+<!--          class="org.mybatis.spring.SqlSessionTemplate">-->
+<!--        <constructor-arg ref="sqlSessionFactory" index="0" />-->
+<!--    </bean>-->
 
-    <!-- Define Mapper Scanner Configurer Class -->
-    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="shin.spring.mvc.mapper" />
-    </bean>
+<!--    &lt;!&ndash; Define Mapper Scanner Configurer Class &ndash;&gt;-->
+<!--    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">-->
+<!--        <property name="basePackage" value="shin.spring.mvc.mapper" />-->
+<!--    </bean>-->
 
 
 </beans>

@@ -32,4 +32,19 @@ public class LoginServiceImpl implements LoginService{
         return mapper.readOneMember(lvo);
     }
 
+    @Override
+    public String checkEncodedPassword(String userid) {
+        return mapper.checkEncodedPassword(userid);
+    }
+
+    @Override
+    public int changeNick(LoginVO lvo) {
+        return mapper.changeNick(lvo);
+    }
+
+    @Override
+    public int updatePassword(LoginVO lvo) {
+        return mapper.changePassword(lvo);
+    }
+
 }

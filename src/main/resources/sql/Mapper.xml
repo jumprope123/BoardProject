@@ -53,7 +53,7 @@
     </update>
 
     <insert id="inputData" statementType="PREPARED" parameterType="shin.spring.mvc.vo.WriteVO">
-        insert into board (username, password, title, textforwrite) values (#{username}, #{password}, #{title}, #{textforwrite})
+        insert into board (username, password, title, textforwrite, userid) values (#{username}, #{password}, #{title}, #{textforwrite}, #{userid})
     </insert>
 
     <select id="readOneData" statementType="PREPARED" parameterType="int" resultType="shin.spring.mvc.vo.WriteVO">

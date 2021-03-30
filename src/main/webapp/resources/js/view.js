@@ -21,6 +21,10 @@ function modiFromView(boardno) {
 
 }
 
+function modiMemberFromView(boardno) {
+    location.href = "/modiData?boardno="+boardno;
+}
+
 function delFromView(boardno) {
     var password = prompt("삭제하시려면 비밀번호를 입력하세요");
 
@@ -37,4 +41,8 @@ function delFromView(boardno) {
                 alert("비밀번호가 틀립니다.");
             }
         })
+}
+
+function delMemberFromView(boardno) {
+    location.href = "/delData?boardno="+boardno;
 }

@@ -14,6 +14,7 @@ public class WriteVO {
     private String regdate;
     private String modidate;
     private Boolean activate;
+    private String userid;
 
     public WriteVO() {
     }

@@ -212,6 +212,14 @@
       <version>5.0.8.RELEASE</version>
     </dependency>
 
+    <!-- JSP페이지에서 사용한 JSTL을 위한 라이브러리입니다. -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>jstl</artifactId>
+      <version>1.2</version>
+    </dependency>
+
+
   </dependencies>
 
   <build>

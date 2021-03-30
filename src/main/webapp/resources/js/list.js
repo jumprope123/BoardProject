@@ -10,6 +10,7 @@ $('#FindBtn').on('click',function () {
 })
 
 function modiFromList(boardno) {
+
     var password = prompt("수정하시려면 비밀번호를 입력하세요");
 
     $.ajax({
@@ -25,7 +26,10 @@ function modiFromList(boardno) {
                alert("비밀번호가 틀립니다.");
            }
         })
+}
 
+function modiMemberFromList(boardno) {
+    location.href = "/modiData?boardno="+boardno;
 }
 
 function delFromList(boardno) {
@@ -44,4 +48,9 @@ function delFromList(boardno) {
                 alert("비밀번호가 틀립니다.");
             }
         })
+}
+
+function delModiFromList(boardno) {
+    location.href = "/delData?boardno="+boardno;
+
 }
