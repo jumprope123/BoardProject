@@ -16,5 +16,12 @@
         insert into login (userid, nickname, password, passwordcheck) VALUES (#{userid}, #{nickname}, #{password}, #{passwordcheck});
     </insert>
 
+    <select id="checkId" statementType="PREPARED" parameterType="String" resultType="int">
+        select count(userid) from login where userid = #{userid};
+    </select>
+
+    <select id="readOneMember" statementType="PREPARED" parameterType="shin.spring.mvc.vo.LoginVO" resultType="shin.spring.mvc.vo.LoginVO">
+        select * from login where userid = #{userid};
+    </select>
 
 </mapper>

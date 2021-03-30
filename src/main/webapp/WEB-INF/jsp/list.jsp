@@ -25,9 +25,9 @@
     <c:set var="navlnk" value="/find?findtype=${param.findtype}&findkey=${param.findkey}&cp="/>
 </c:if>
 
+
 <div id="main">
     <div class="margin1050">
-
         <div class="row mt-5">
             <div class="col-6 offset-3 text-center">
                 <div class="form-group row">

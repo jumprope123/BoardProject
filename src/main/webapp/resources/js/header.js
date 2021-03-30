@@ -9,3 +9,7 @@ $("#joinBtn").on('click',function () {
 $("#logout").on('click',function () {
     location.href = "/login/logout";
 })
+
+$("#memberInfo").on('click',function () {
+    location.href = "/login/logout";
+})

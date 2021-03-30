@@ -16,6 +16,7 @@
                 </c:if>
                 <c:if test="${not empty UID}">
                     <button class="btn btn-secondary" id="logout">로그아웃</button>
+                    <button class="btn btn-secondary" id="memberInfo">회원정보</button>
                 </c:if>
             </div>
         </div>

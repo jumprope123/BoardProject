@@ -6,4 +6,8 @@ public interface LoginMapper {
 
 
     int inputData(LoginVO lvo);
+
+    int checkId(String userid);
+
+    LoginVO readOneMember(LoginVO lvo);
 }

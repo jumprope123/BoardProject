@@ -14,7 +14,16 @@ public class LoginServiceImpl implements LoginService{
 
     @Override
     public int inputJoinData(LoginVO lvo) {
-        System.out.println(lvo.getUserid());
         return mapper.inputData(lvo);
+    }
+
+    @Override
+    public int idCheck(LoginVO lvo) {
+        return mapper.checkId(lvo.getUserid());
+    }
+
+    @Override
+    public LoginVO login(LoginVO lvo) {
+        return mapper.readOneMember(lvo);
     }
 }
