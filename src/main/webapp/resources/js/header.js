@@ -11,5 +11,5 @@ $("#logout").on('click',function () {
 })
 
 $("#memberInfo").on('click',function () {
-    location.href = "/login/logout";
+    location.href = "/login/memberInfo";
 })

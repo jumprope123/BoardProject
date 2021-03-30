@@ -95,4 +95,13 @@ public class LoginController {
         return "redirect:/list";
     }
 
+    @GetMapping("/login/memberInfo")
+    public ModelAndView memberInfo (ModelAndView mv, HttpSession session){
+        mv.setViewName("/login/memberInfo.tiles");
+        LoginVO lvo = (LoginVO) session.getAttribute("UID");
+        mv.addObject("data", lsrv.readOneMember(lvo));
+        return mv;
+    }
+
+
 }

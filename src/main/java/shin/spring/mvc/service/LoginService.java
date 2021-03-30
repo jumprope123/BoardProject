@@ -8,4 +8,6 @@ public interface LoginService {
     int idCheck(LoginVO lvo);
 
     LoginVO login(LoginVO lvo);
+
+    LoginVO readOneMember(LoginVO lvo);
 }

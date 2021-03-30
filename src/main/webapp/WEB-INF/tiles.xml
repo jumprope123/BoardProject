@@ -26,4 +26,8 @@
         <put-attribute name="main" value="/WEB-INF/jsp/{1}/{2}.jsp"/> <!--*의 숫자에 따라 번호가 들어감-->
     </definition>
 
+    <definition extends="base" name="*/*/*.tiles">
+        <put-attribute name="main" value="/WEB-INF/jsp/{1}/{2}/{3}.jsp"/> <!--*의 숫자에 따라 번호가 들어감-->
+    </definition>
+
 </tiles-definitions>

@@ -26,4 +26,10 @@ public class LoginServiceImpl implements LoginService{
     public LoginVO login(LoginVO lvo) {
         return mapper.readOneMember(lvo);
     }
+
+    @Override
+    public LoginVO readOneMember(LoginVO lvo) {
+        return mapper.readOneMember(lvo);
+    }
+
 }
