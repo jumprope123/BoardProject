@@ -131,8 +131,10 @@ public class LoginController {
     }
 
     @PostMapping("/changeNickOk")
-    public String changeNickOk(LoginVO lvo){
+    public String changeNickOk(LoginVO lvo, HttpSession session){
         int cnt = lsrv.changeNick(lvo);
+        session.removeAttribute("UID");
+        session.setAttribute("UID",lvo);
         return "redirect:/login/memberInfo";
     }
 

@@ -21,9 +21,9 @@ import javax.sql.DataSource;
 @MapperScan("shin.spring.mvc.mapper")
 public class DataSourceConfig {
     private String driverClassName = "org.postgresql.Driver";
-    private String url = "jdbc:postgresql://localhost:5432/postgres";
-    private String username = "postgres";
-    private String password = "0970";
+    private String url = "jdbc:postgresql://192.168.100.125:5432/test1";
+    private String username = "test1";
+    private String password = "1234";
 
     @Autowired
     private ApplicationContext applicationContext;
