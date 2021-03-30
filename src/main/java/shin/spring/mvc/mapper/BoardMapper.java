@@ -25,5 +25,5 @@ public interface BoardMapper {
 
     int modiData(WriteVO wvo);
 
-    void addViewCtn(int parseInt);
+    void addViewCnt(int parseInt);
 }

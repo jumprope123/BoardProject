@@ -56,5 +56,16 @@
         insert into board (username, password, title, textforwrite) values (#{username}, #{password}, #{title}, #{textforwrite})
     </insert>
 
+    <select id="readOneData" statementType="PREPARED" parameterType="int" resultType="shin.spring.mvc.vo.WriteVO">
+        select * from board where boardno = #{boardno};
+    </select>
+
+    <select id="passwdCheck" statementType="PREPARED" parameterType="int" resultType="String">
+        select password from board where boardno = #{boardno};
+    </select>
+
+    <update id="modiData" statementType="PREPARED" parameterType="shin.spring.mvc.vo.WriteVO">
+        update board set username = #{username} , password = #{password} , title = #{title} , textforwrite = #{textforwrite} , modidate = current_timestamp where boardno = #{boardno} ;
+    </update>
 
 </mapper>

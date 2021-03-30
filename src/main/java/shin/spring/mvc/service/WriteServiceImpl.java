@@ -82,7 +82,7 @@ public class WriteServiceImpl implements WriteService {
     @Override
     public void addViewCtn(String boardno) {
 //        wdao.addViewCtn(Integer.parseInt(boardno));
-        mapper.addViewCtn(Integer.parseInt(boardno));
+        mapper.addViewCnt(Integer.parseInt(boardno));
     }
 
     @Override
