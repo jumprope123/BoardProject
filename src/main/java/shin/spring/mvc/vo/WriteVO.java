@@ -15,6 +15,7 @@ public class WriteVO {
     private String modidate;
     private Boolean activate;
     private String userid;
+    private Boolean readonlymember;
 
     public WriteVO() {
     }

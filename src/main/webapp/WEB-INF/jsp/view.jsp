@@ -3,6 +3,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 
+<c:if test="${(data.readonlymember eq true) and (empty UID)}">
+    <c:redirect url="/list" />
+</c:if>
+
 <div id="main">
     <div class="margin1050">
         <div class="mt-3 h4 text-center text-success">게시글 상세보기</div>

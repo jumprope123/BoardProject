@@ -35,6 +35,9 @@ public class IndexController {
 
     @PostMapping("/writeOk")
     public String writeok(WriteVO wvo){
+        if (wvo.getReadonlymember() == null){
+            wvo.setReadonlymember(false);
+        }
         int cnt = wsrv.inputData(wvo);
         return "redirect:/list?cp=1";
     }
