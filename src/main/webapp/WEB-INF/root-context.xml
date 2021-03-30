@@ -32,7 +32,7 @@
     <bean id="sqlSessionFactory"
           class="org.mybatis.spring.SqlSessionFactoryBean"
           p:dataSource-ref="dbcpDataSource"
-          p:mapperLocations="classpath*:shin/spring/mvc/sql/*.xml"/>
+          p:mapperLocations="classpath*:/sql/*.xml"/>
 <!--    *.xml로 끝나는 모든 xml을 읽어라-->
 
     <!-- myBatis3 설정 #2 -->

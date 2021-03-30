@@ -9,9 +9,7 @@ public interface BoardMapper {
 
     int delOneData(int boardno);
 
-    int
-
-    inputData(WriteVO wvo);
+    int inputData(WriteVO wvo);
 
     List<WriteVO> readAllData(int snum);
 
